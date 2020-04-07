@@ -19,10 +19,16 @@ async function init() {
                 }
             ]).then((response) => response.username);
     
-        axios.get(`https://api.github.com/users/${userName}`)
+        await axios.get(`https://api.github.com/users/${userName}`)
         .then((response) => console.log(response.data));
         
-
+        fs.appendFile("log.txt", userName, err => {
+            if(err){
+                console.log(err)
+            }else{
+                console.log("success!")
+            }
+        })
 }
 
 init();
