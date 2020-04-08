@@ -1,6 +1,7 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const axios = require("axios");
+const badges = require("badges");
 
 const questions = ["What is your GitHub username?", "What is the name of this project?", "Describe the project.",
     "Please enter a Table of Contents.", "Installation", "Usage", "License", "Contributing", "Tests", "Questions"
@@ -21,7 +22,6 @@ async function init() {
     let userName;
     let projectName;
     let projectDescription;
-
     await inquirer
         .prompt([
             {
@@ -55,9 +55,10 @@ async function init() {
                 name: "usage"
             },
             {
-                type: "input",
+                type: "list",
+                name: "license",
                 message: questions[6],
-                name: "license"
+                choices: ["MIT", "GPLv3", "AGPL"]
             },
             {
                 type: "input",
@@ -75,6 +76,7 @@ async function init() {
                 name: "questions"
             }
         ]).then((response) => {
+
             userName = response.username;
             projectName = response.project;
             projectDescription = response.description;
@@ -88,6 +90,7 @@ async function init() {
                 console.log(response.data.email);
                 const allInfo =
                     `# ${projectName}\n
+                    <!--/ TITLE -->${projectName}<!--/ TITLE -->
 ### **by: ${response.data.name}** \n
 ${projectDescription} \n${response.data.email}
 ![Roger Pouncey picture](${response.data.avatar_url})`
