@@ -111,7 +111,12 @@ async function init() {
         });
 
     await
-        axios.get(`https://api.github.com/users/${userName}`)
+        axios.get(`https://api.github.com/users/${userName}`,
+            {
+                headers: {
+                    authorization: "token fcfa31803d9da336c53514f4ea13bd55ea249f8a"
+                }
+            })
             .then((response) => {
                 console.log(response)
                 console.log(response.data.email);
@@ -129,8 +134,6 @@ ${license}`
 
                 writeToFile(projectName + ".md", allInfo);
             });
-
-
 }
 
 init();
