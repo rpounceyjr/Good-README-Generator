@@ -1,9 +1,9 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const axios = require("axios");
-const badges = require("badges");
+// const badges = require("badges");
 
-const questions = ["What is your GitHub username?", "What is the name of this project?", "Describe the project.",
+const questionsArray = ["What is your GitHub username?", "What is the name of this project?", "Describe the project.",
     "Please enter a Table of Contents.", "Installation", "Usage", "License", "Contributing", "Tests", "Questions"
 ];
 
@@ -22,64 +22,91 @@ async function init() {
     let userName;
     let projectName;
     let projectDescription;
+    let tableOfContents;
+    let installation;
+    let usage;
+    let license;
+    let contributing;
+    let tests;
+    let questions;
+
+    let licenseBadgeArray = ["![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)",
+        "![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)",
+        "![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)"];
+
     await inquirer
         .prompt([
             {
                 type: "input",
-                message: questions[0],
+                message: questionsArray[0],
                 name: "username"
             },
             {
                 type: "input",
-                message: questions[1],
+                message: questionsArray[1],
                 name: "project"
             },
             {
                 type: "input",
-                message: questions[2],
+                message: questionsArray[2],
                 name: "description"
             },
             {
                 type: "input",
-                message: questions[3],
+                message: questionsArray[3],
                 name: "contents"
             },
             {
                 type: "input",
-                message: questions[4],
+                message: questionsArray[4],
                 name: "installation"
             },
             {
                 type: "input",
-                message: questions[5],
+                message: questionsArray[5],
                 name: "usage"
             },
             {
                 type: "list",
                 name: "license",
-                message: questions[6],
+                message: questionsArray[6],
                 choices: ["MIT", "GPLv3", "AGPL"]
             },
             {
                 type: "input",
-                message: questions[7],
+                message: questionsArray[7],
                 name: "contributing"
             },
             {
                 type: "input",
-                message: questions[8],
+                message: questionsArray[8],
                 name: "tests"
             },
             {
                 type: "input",
-                message: questions[9],
+                message: questionsArray[9],
                 name: "questions"
             }
         ]).then((response) => {
+            //this code gets a license badge from license badge array corresponding to user's
+            //inquirer choice for the license question
+            if (response.license === "MIT") {
+                license = licenseBadgeArray[0];
+            } else if (response.license === "GPLv3") {
+                license = licenseBadgeArray[1];
+            } else {
+                license = licenseBadgeArray[2];
+            };
 
             userName = response.username;
             projectName = response.project;
             projectDescription = response.description;
+            installation = response.installation;
+            usage = response.usage;
+            contributing = response.contributing;
+            tests = response.tests;
+            questions = response.questions;
+
 
         });
 
@@ -90,10 +117,15 @@ async function init() {
                 console.log(response.data.email);
                 const allInfo =
                     `# ${projectName}\n
-                    <!--/ TITLE -->${projectName}<!--/ TITLE -->
 ### **by: ${response.data.name}** \n
-${projectDescription} \n${response.data.email}
-![Roger Pouncey picture](${response.data.avatar_url})`
+${projectDescription}\n
+![Roger Pouncey picture](${response.data.avatar_url})\n
+${response.data.email}\n
+
+
+
+
+${license}`
 
                 writeToFile(projectName + ".md", allInfo);
             });
