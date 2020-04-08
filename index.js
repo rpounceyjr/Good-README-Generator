@@ -101,6 +101,7 @@ async function init() {
             userName = response.username;
             projectName = response.project;
             projectDescription = response.description;
+            tableOfContents = response.contents;
             installation = response.installation;
             usage = response.usage;
             contributing = response.contributing;
@@ -113,27 +114,34 @@ async function init() {
     await
         axios.get(`https://api.github.com/users/${userName}`,
             {
-                headers: {
-                    authorization: "token fcfa31803d9da336c53514f4ea13bd55ea249f8a"
-                }
+                // headers: {
+                //     authorization: "token fcfa31803d9da336c53514f4ea13bd55ea249f8a"
+                // }
             })
             .then((response) => {
                 console.log(response)
                 console.log(response.data.email);
                 const allInfo =
-                    `# ${projectName}\n
+                    `# ${projectName} readMe\n
 ### **by: ${response.data.name}** \n
 ${projectDescription}\n
 ![Roger Pouncey picture](${response.data.avatar_url})\n
 ${response.data.email}\n
-
-
-
-
+#### **Table of Contents** \n
+##### **Installation**\n
+                ${installation}\n
+##### **Usage**\n
+                ${usage}\n
+##### **Contributing**\n
+                ${contributing}\n
+##### **Tests**\n
+                ${tests}\n
+##### **Questions**\n
+                ${questions}\n
 ${license}`
 
                 writeToFile(projectName + ".md", allInfo);
             });
 }
 
-init();
+init();jr
