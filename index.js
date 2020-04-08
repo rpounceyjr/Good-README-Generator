@@ -84,13 +84,13 @@ async function init() {
     await
         axios.get(`https://api.github.com/users/${userName}`)
             .then((response) => {
-                // console.log(response)
+                console.log(response)
                 console.log(response.data.email);
                 const allInfo =
                     `# ${projectName}\n
 ### **by: ${response.data.name}** \n
 ${projectDescription} \n${response.data.email}
-![Roger Pouncey picture]("${response.data.avatar_url}")`
+![Roger Pouncey picture](${response.data.avatar_url})`
 
                 writeToFile(projectName + ".md", allInfo);
             });
