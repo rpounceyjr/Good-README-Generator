@@ -159,16 +159,16 @@ ${projectDescription}\n
 ![Roger Pouncey picture](${response.data.avatar_url})\n
 Email: ${email}\n
 ## **Table of Contents** \n
-### i. Installation\n
-### ii. Usage\n
-### iii. Contributing\n
-### iv. Tests\n
-### v. Questions\n
-### vi. License\n
+#### i. [Installation](#installation)\n
+#### ii. [Usage](#usage)\n
+#### iii. [Contributing](#contributing)\n
+#### iv. [Tests](#tests)\n
+#### v. [Questions](#questions)\n
+#### vi. [License](#license)\n
 
-## **Installation**\n
+## **Installation** <a name="introduction"></a>\n 
                 ${installation}\n
-## **Usage**\n
+## **Usage** <a name="usage"></a>\n
 ${usage}\n
 ## **Contributing**\n
 ${contributing}\n
@@ -176,7 +176,7 @@ ${contributing}\n
 ${tests}\n
 ## **Questions**\n
 ${questions}\n
-## **License**\n
+## **License**<a name="license"></a>\n
 ${license}`
             //the following function awaits the inquirer and axious functions then writes
             //the formatted content to the README.md file
