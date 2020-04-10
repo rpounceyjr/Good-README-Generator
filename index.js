@@ -170,13 +170,13 @@ Email: ${email}\n
                 ${installation}\n
 ## **Usage** <a name="usage"></a>\n
 ${usage}\n
-## **Contributing**\n
+## **Contributing** <a name="contributing"></a>\n
 ${contributing}\n
-## **Tests**\n
+## **Tests** <a name="tests"></a>\n
 ${tests}\n
-## **Questions**\n
+## **Questions** <a name="questions"></a>\n
 ${questions}\n
-## **License**<a name="license"></a>\n
+## **License** <a name="license"></a>\n
 ${license}`
             //the following function awaits the inquirer and axious functions then writes
             //the formatted content to the README.md file
