@@ -1,10 +1,11 @@
+require('dotenv').config();
 const fs = require("fs");
 const inquirer = require("inquirer");
 const axios = require("axios");
-// const badges = require("badges");
 
-const questionsArray = ["What is your GitHub username?", "What is the name of this project?", "Describe the project.",
-    "Please enter a Table of Contents.", "Installation", "Usage", "License", "Contributing", "Tests", "Questions"
+
+const questionsArray = ["What is your GitHub username?", "What is the name of this project?", "What is your email address?", "Describe the project.",
+    "Installation", "Usage", "License", "Contributing", "Tests", "Questions"
 ];
 
 function writeToFile(fileName, data) {
@@ -49,12 +50,12 @@ async function init() {
             {
                 type: "input",
                 message: questionsArray[2],
-                name: "description"
+                name: "email"
             },
             {
                 type: "input",
                 message: questionsArray[3],
-                name: "contents"
+                name: "description"
             },
             {
                 type: "input",
@@ -101,7 +102,7 @@ async function init() {
             userName = response.username;
             projectName = response.project;
             projectDescription = response.description;
-            tableOfContents = response.contents;
+            email = response.email;
             installation = response.installation;
             usage = response.usage;
             contributing = response.contributing;
@@ -110,14 +111,18 @@ async function init() {
 
 
         });
-
     await
-        axios.get(`https://api.github.com/users/${userName}`,
-            {
-                // headers: {
-                //     authorization: "token fcfa31803d9da336c53514f4ea13bd55ea249f8a"
-                // }
-            })
+        // axios.get(`https://api.github.com/users/${userName}`,
+        // {
+        //   headers: {
+        //             authorization: `token ${process.env.USER_TOKEN}`
+        //         }
+        //     })
+        axios.get(
+            `https://api.github.com/users/${userName}?client_id=${
+            process.env.CLIENT_ID
+            }&client_secret=${process.env.CLIENT_SECRET}`
+          )
             .then((response) => {
                 console.log(response)
                 console.log(response.data.email);
@@ -138,10 +143,11 @@ ${response.data.email}\n
                 ${tests}\n
 ##### **Questions**\n
                 ${questions}\n
+##### **License**\n
 ${license}`
 
                 writeToFile(projectName + ".md", allInfo);
             });
 }
 
-init();jr
+init();
