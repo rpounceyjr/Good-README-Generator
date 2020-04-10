@@ -2,7 +2,7 @@
 
 ### **by Roger Pouncey** 
 
-something or other 
+blah blah blah
 
 ![Roger Pouncey picture](https://avatars2.githubusercontent.com/u/58075467?v=4)
 
@@ -10,9 +10,21 @@ Email: rpounceyjr@gmail.com
 
 ## **Table of Contents** 
 
-## **Installation**
+#### i. [Installation] (#installation)
 
-                $npm i
+#### ii. Usage
+
+#### iii. Contributing
+
+#### iv. Tests
+
+#### v. Questions
+
+#### vi. License
+
+## **Installation** <a name="installation"></a>
+
+                install it 
 
 ## **Usage**
 
@@ -20,16 +32,16 @@ use it
 
 ## **Contributing**
 
-Roger Pouncey
+me!
 
 ## **Tests**
 
-no tests this time
+nope!
 
 ## **Questions**
 
-don't ask me no questions
+please don't
 
 ## **License**
 
-![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)
+![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)

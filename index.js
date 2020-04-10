@@ -159,6 +159,13 @@ ${projectDescription}\n
 ![Roger Pouncey picture](${response.data.avatar_url})\n
 Email: ${email}\n
 ## **Table of Contents** \n
+### i. Installation\n
+### ii. Usage\n
+### iii. Contributing\n
+### iv. Tests\n
+### v. Questions\n
+### vi. License\n
+
 ## **Installation**\n
                 ${installation}\n
 ## **Usage**\n
