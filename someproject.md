@@ -2,11 +2,11 @@
 
 ### **by: Roger Pouncey** 
 
-something or other
+
 
 ![Roger Pouncey picture](https://avatars2.githubusercontent.com/u/58075467?v=4)
 
-rpounceyjr@gmail.com
+blah blah
 
 #### **Table of Contents** 
 
@@ -29,5 +29,7 @@ rpounceyjr@gmail.com
 ##### **Questions**
 
                 
+
+##### **License**
 
 ![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)

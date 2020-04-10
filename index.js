@@ -111,27 +111,34 @@ async function init() {
 
 
         });
+    //The two commented out code blocks below are different methods of authorization used to 
+    //authorize the api call to get user email from api response.  This app now retrieves user email
+    //via inquirer prompt, but I'm leaving the code below for future reference.
+
+    //Code to authorize the api call using a GitHub personal access token.
+    // axios.get(`https://api.github.com/users/${userName}`,
+    // {
+    //   headers: {
+    //             authorization: `token ${process.env.USER_TOKEN}`
+    //         }
+    //     })
+    //Code to authorize api call using client id and client secret obtained from authorizing 
+    //app with OAuth.  
+    // axios.get(
+    //     `https://api.github.com/users/${userName}?client_id=${
+    //     process.env.CLIENT_ID
+    //     }&client_secret=${process.env.CLIENT_SECRET}`
+    //   )
     await
-        // axios.get(`https://api.github.com/users/${userName}`,
-        // {
-        //   headers: {
-        //             authorization: `token ${process.env.USER_TOKEN}`
-        //         }
-        //     })
-        axios.get(
-            `https://api.github.com/users/${userName}?client_id=${
-            process.env.CLIENT_ID
-            }&client_secret=${process.env.CLIENT_SECRET}`
-          )
+        axios.get(`https://api.github.com/users/${userName}`)
             .then((response) => {
-                console.log(response)
-                console.log(response.data.email);
+                console.log(response);
                 const allInfo =
                     `# ${projectName} readMe\n
 ### **by: ${response.data.name}** \n
 ${projectDescription}\n
 ![Roger Pouncey picture](${response.data.avatar_url})\n
-${response.data.email}\n
+${email}\n
 #### **Table of Contents** \n
 ##### **Installation**\n
                 ${installation}\n
