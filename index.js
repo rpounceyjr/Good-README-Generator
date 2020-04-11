@@ -181,7 +181,9 @@ ${license}`
             //the following function awaits the inquirer and axious functions then writes
             //the formatted content to the README.md file
             writeToFile("README.md", allInfoFormattedAsMD);
-        });
+        })
+        //if the call doesn't work, the below message is logged
+        .catch((err) => console.log("User not found"));
 }
 //Finally, the init function is called.
 init();

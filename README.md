@@ -1,12 +1,12 @@
-# someproject README
+# something README
 
 ### **by Roger Pouncey** 
 
-asdf;lkjasfd
+alk;dsklfj
 
 ![Roger Pouncey picture](https://avatars2.githubusercontent.com/u/58075467?v=4)
 
-Email: rpounceyjr@gmail.com
+Email: sadflk
 
 ## **Table of Contents** 
 
@@ -25,24 +25,24 @@ Email: rpounceyjr@gmail.com
 
 ## **Installation** <a name="introduction"></a>
  
-                as;dfljasdf
+                asdlk;dsf
 
 ## **Usage** <a name="usage"></a>
 
-asd;flkjasdf
+a;lsdfjl
 
-## **Contributing**
+## **Contributing** <a name="contributing"></a>
 
-as;dlfjasdf
+asdflkj
 
-## **Tests**
+## **Tests** <a name="tests"></a>
 
-asd;lfjasd;fljk
+asd;lkfj
 
-## **Questions**
+## **Questions** <a name="questions"></a>
 
-asd;fjlasdf
+a;sdlfj
 
-## **License**<a name="license"></a>
+## **License** <a name="license"></a>
 
-![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)
+![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)
