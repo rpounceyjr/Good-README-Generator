@@ -1,12 +1,12 @@
-# something README
+# Good README generator 
 
 ### **by Roger Pouncey** 
 
-alk;dsklfj
+A command line program that generates a good README file based on user input.
 
 ![Roger Pouncey picture](https://avatars2.githubusercontent.com/u/58075467?v=4)
 
-Email: sadflk
+Email: rpounceyjr@gmail.com
 
 ## **Table of Contents** 
 
@@ -25,24 +25,25 @@ Email: sadflk
 
 ## **Installation** <a name="introduction"></a>
  
-                asdlk;dsf
+                $ npm i
+
 
 ## **Usage** <a name="usage"></a>
 
-a;lsdfjl
+This app runs in the command line and is designed to create a neatly formatted README file based on user input.  Users are prompted, via the inquirer library, to answer various questions about themselves and the repo for which they are creating the README.  A call is made to the GitHub user API to retrieve the user's name and profile picture.  Once all of the information has been gathered from inquirer and the API call, it is plugged into a neatly formatted .md template.  This template is then written to a README file using the fs.writeFile method. A Table Of Contents with clickable links is included in the generated README to allow easy navigation for longer documents. 
 
 ## **Contributing** <a name="contributing"></a>
 
-asdflkj
+This project was created by Roger Pouncey.  Improvements can be made to the app by making a pull request on GitHub.
 
 ## **Tests** <a name="tests"></a>
 
-asd;lkfj
+No tests were performed on the current build of this app.  In the future, testing will be performed with Jest.
 
 ## **Questions** <a name="questions"></a>
 
-a;sdlfj
+Questions about this app can be addressed to Roger Pouncey, either through GitHub or via the above email address.
 
 ## **License** <a name="license"></a>
 
-![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)
+![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)
