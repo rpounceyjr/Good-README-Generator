@@ -9,7 +9,7 @@ const axios = require("axios");
 
 //Array that contains the prompts for inquirer
 const questionsArray = ["What is your GitHub username?", "What is the name of this project?", "What is your email address?", "Describe the project.",
-    "Describe the installation of this project", "Describe this project's usage", "What license is used for this project?", "List contributions.", "Describe any tests that were performed on this project.", "To whom should users direct their questions?"
+    "Describe the installation of this project", "Describe this project's usage.", "What license is used for this project?", "List contributions.", "Describe any tests that were performed on this project.", "To whom should users direct their questions?"
 ];
 
 //writeFile that writes data to fileName
